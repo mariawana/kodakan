@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kodakan — Vintage Film Photobooth</title>
+  <meta name="description" content="Kodakan is a free vintage film photobooth. Strike a pose, get a 4-frame strip, and download it. Photos never leave your device." />
+  <meta name="theme-color" content="#efe3c8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">★ Film Booth ★</p>
+    <h1 class="logo">Kodakan</h1>
+    <p class="tagline">Four frames. One strip. Pure nostalgia.</p>
+  </header>
+
+  <main>
+    <!-- BOOTH -->
+    <section id="booth" class="booth">
+      <div class="stage">
+        <div class="viewfinder" id="viewfinder">
+          <video id="video" autoplay playsinline muted></video>
+          <div class="countdown" id="countdown" aria-live="assertive"></div>
+          <div class="flash" id="flash"></div>
+          <div class="placeholder" id="placeholder">
+            <p>Ready to load the film?</p>
+            <button id="startCamera" class="btn btn-primary">Turn on camera</button>
+            <small id="cameraError" class="error" role="alert"></small>
+          </div>
+          <div class="shot-badge" id="shotBadge" hidden>Frame 1 / 4</div>
+        </div>
+
+        <div class="thumbs" id="thumbs" aria-label="Captured photos">
+          <div class="thumb"></div>
+          <div class="thumb"></div>
+          <div class="thumb"></div>
+          <div class="thumb"></div>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <div class="control">
+          <h2>Film</h2>
+          <div class="chips" id="filters" role="radiogroup" aria-label="Filter"></div>
+        </div>
+
+        <div class="control">
+          <h2>Strip color</h2>
+          <div class="swatches" id="frames" role="radiogroup" aria-label="Frame color"></div>
+        </div>
+
+        <div class="control">
+          <h2>Timer</h2>
+          <div class="chips" id="timers" role="radiogroup" aria-label="Countdown seconds">
+            <button class="chip" data-seconds="3" aria-checked="true" role="radio">3s</button>
+            <button class="chip" data-seconds="5" aria-checked="false" role="radio">5s</button>
+            <button class="chip" data-seconds="10" aria-checked="false" role="radio">10s</button>
+          </div>
+        </div>
+
+        <button id="snapBtn" class="btn btn-snap" disabled>Start the Roll</button>
+        <p class="hint">You get a few seconds between frames to change your pose.</p>
+      </aside>
+    </section>
+
+    <!-- RESULT -->
+    <section id="result" class="result" hidden>
+      <h2 class="result-title">Fresh off the roll!</h2>
+      <div class="result-body">
+        <img id="stripImg" alt="Your Kodakan photo strip" />
+        <div class="result-actions">
+          <a id="downloadBtn" class="btn btn-primary" download="kodakan-strip.png">Download strip</a>
+          <button id="shareBtn" class="btn btn-ghost" hidden>Share</button>
+          <button id="retakeBtn" class="btn btn-ghost">Shoot another roll</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Kodakan · Photos are developed in your browser and never uploaded.</p>
+    <p class="credit">Made with ♥ by Arao</p>
+  </footer>
+
+  <canvas id="work" hidden></canvas>
+  <script src="app.js"></script>
+</body>
+</html>
