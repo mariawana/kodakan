@@ -10,22 +10,4 @@ Made by Arao.
 - `style.css` – vintage film styling
 - `app.js` – camera, countdown, filters, strip rendering
 
-## Run locally
 
-Camera access needs `localhost` or HTTPS:
-
-```bash
-cd photobooth
-npx serve .
-```
-
-## Deploy to Vercel
-
-**Option A: CLI**
-
-```bash
-npm i -g vercel
-cd photobooth
-vercel        # preview
-vercel --prod # production
-```
