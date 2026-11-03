@@ -29,12 +29,3 @@ cd photobooth
 vercel        # preview
 vercel --prod # production
 ```
-
-**Option B: GitHub**
-
-1. Push the `photobooth` folder to a GitHub repo.
-2. In Vercel, click **Add New → Project** and import the repo.
-3. Framework preset: **Other**. Leave build command and output directory empty.
-4. Deploy.
-
-Vercel serves over HTTPS, which the camera API requires. In project settings you can rename the project to `kodakan` to get `kodakan.vercel.app` if it's free.
