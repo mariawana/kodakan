@@ -2,8 +2,6 @@
 
 A vintage film photobooth for the browser: 4 countdown frames, retro film filters with grain, colored strips (including a sprocket-hole film frame), and a downloadable photo strip. Everything runs client-side, so no photos are uploaded.
 
-Made by Arao.
-
 ## Files
 
 - `index.html` – page structure
